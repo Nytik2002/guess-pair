@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
 
@@ -7,7 +8,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Угадай пару — добрая игра на память с милыми животными.">
+          content="Угадай пару — добрая игра на память с милыми животными. Открывай карточки, запоминай изображения и находи одинаковые пары.">
 
     <title>Угадай пару</title>
 
@@ -24,14 +25,25 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
             background: #fffaf5;
             color: #4a3b34;
             line-height: 1.6;
         }
 
+
+        /* ========================================
+           HERO
+           ======================================== */
+
         header {
-            min-height: 600px;
+            min-height: 680px;
 
             display: flex;
             align-items: center;
@@ -39,7 +51,7 @@
 
             text-align: center;
 
-            padding: 60px 20px;
+            padding: 70px 20px;
 
             background:
                 linear-gradient(
@@ -50,30 +62,61 @@
         }
 
         .hero {
-            max-width: 750px;
+            max-width: 850px;
         }
 
-        .animal-icon {
-            font-size: 95px;
-            margin-bottom: 15px;
+        .hero-animals {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+
+            gap: 18px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-animal {
+            width: 110px;
+            height: 110px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 8px 12px
+                    rgba(82, 55, 40, 0.14)
+                );
+        }
+
+        .hero-animal.center {
+            width: 145px;
+            height: 145px;
         }
 
         h1 {
             font-size: 58px;
+
             color: #6f4e3d;
+
             margin-bottom: 15px;
         }
 
         .subtitle {
+            max-width: 650px;
+
+            margin:
+                0 auto
+                35px;
+
             font-size: 22px;
+
             color: #80665a;
-            margin-bottom: 35px;
         }
 
         .button {
             display: inline-block;
 
-            padding: 15px 34px;
+            padding: 15px 36px;
 
             background: #ef9c68;
             color: white;
@@ -81,18 +124,28 @@
             border-radius: 30px;
 
             text-decoration: none;
-            font-weight: bold;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 8px 18px
+                rgba(222, 127, 75, 0.22);
 
             transition: 0.2s;
         }
 
         .button:hover {
-            transform: translateY(-2px);
-            background: #e58b54;
+            transform: translateY(-3px);
+            background: #e88c55;
         }
 
+
+        /* ========================================
+           COMMON
+           ======================================== */
+
         section {
-            padding: 80px 20px;
+            padding: 85px 20px;
         }
 
         .light {
@@ -100,22 +153,74 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             text-align: center;
         }
 
         h2 {
             font-size: 36px;
+
             color: #6f4e3d;
+
             margin-bottom: 25px;
         }
 
         .container > p {
             max-width: 760px;
-            margin: 0 auto 15px;
+
+            margin:
+                0 auto
+                16px;
+
             font-size: 18px;
         }
+
+
+        /* ========================================
+           ANIMAL GALLERY
+           ======================================== */
+
+        .animal-gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            gap: 22px;
+
+            margin-top: 45px;
+        }
+
+        .animal {
+            background: white;
+
+            padding: 18px;
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 7px 24px
+                rgba(80, 55, 40, 0.08);
+
+            transition: 0.2s;
+        }
+
+        .animal:hover {
+            transform: translateY(-5px);
+        }
+
+        .animal img {
+            width: 100%;
+            height: 110px;
+
+            object-fit: contain;
+        }
+
+
+        /* ========================================
+           HOW TO PLAY
+           ======================================== */
 
         .cards {
             display: grid;
@@ -140,21 +245,31 @@
                 rgba(80, 55, 40, 0.08);
         }
 
-        .card-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
+        .card img {
+            width: 100px;
+            height: 100px;
+
+            object-fit: contain;
+
+            margin-bottom: 18px;
         }
 
         .card h3 {
             color: #6f4e3d;
+
             margin-bottom: 10px;
+
+            font-size: 22px;
         }
 
-        .animals {
-            font-size: 45px;
-            margin-top: 30px;
-            letter-spacing: 10px;
+        .card p {
+            color: #6b5a51;
         }
+
+
+        /* ========================================
+           FEATURES
+           ======================================== */
 
         .features {
             display: grid;
@@ -170,7 +285,7 @@
         .feature {
             background: white;
 
-            padding: 22px;
+            padding: 23px;
 
             border-radius: 18px;
 
@@ -181,32 +296,59 @@
                 rgba(80, 55, 40, 0.07);
         }
 
+
+        /* ========================================
+           SUPPORT
+           ======================================== */
+
         .email {
             display: inline-block;
 
             margin-top: 20px;
 
+            padding: 12px 24px;
+
+            background: white;
+
+            border-radius: 25px;
+
             color: #a45f38;
+
+            text-decoration: none;
 
             font-size: 18px;
 
-            font-weight: bold;
+            font-weight: 700;
+
+            box-shadow:
+                0 5px 18px
+                rgba(80, 55, 40, 0.08);
         }
+
+
+        /* ========================================
+           PRIVACY
+           ======================================== */
 
         .privacy {
             display: inline-block;
 
-            margin-top: 15px;
+            margin-top: 18px;
 
             color: #a45f38;
 
-            font-weight: bold;
+            font-weight: 700;
         }
+
+
+        /* ========================================
+           FOOTER
+           ======================================== */
 
         footer {
             text-align: center;
 
-            padding: 35px 20px;
+            padding: 38px 20px;
 
             background: #6f4e3d;
 
@@ -214,26 +356,45 @@
         }
 
         footer p {
-            margin: 5px;
+            margin: 4px;
         }
 
 
-        @media (max-width: 750px) {
+        /* ========================================
+           MOBILE
+           ======================================== */
+
+        @media (max-width: 800px) {
 
             header {
-                min-height: 520px;
+                min-height: 600px;
             }
 
             h1 {
-                font-size: 43px;
+                font-size: 45px;
             }
 
             .subtitle {
-                font-size: 18px;
+                font-size: 19px;
             }
 
             h2 {
                 font-size: 30px;
+            }
+
+            .hero-animal {
+                width: 80px;
+                height: 80px;
+            }
+
+            .hero-animal.center {
+                width: 105px;
+                height: 105px;
+            }
+
+            .animal-gallery {
+                grid-template-columns:
+                    repeat(3, 1fr);
             }
 
             .cards {
@@ -244,8 +405,36 @@
                 grid-template-columns: 1fr;
             }
 
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero-animals {
+                gap: 8px;
+            }
+
+            .hero-animal {
+                width: 65px;
+                height: 65px;
+            }
+
+            .hero-animal.center {
+                width: 85px;
+                height: 85px;
+            }
+
+            h1 {
+                font-size: 39px;
+            }
+
+            .animal-gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
             section {
-                padding: 60px 20px;
+                padding: 65px 18px;
             }
 
         }
@@ -261,24 +450,52 @@
 
     <div class="hero">
 
-        <div class="animal-icon">
-            🐰 🐻
+        <div class="hero-animals">
+
+            <img
+                src="Bunny.png"
+                alt="Зайчик"
+                class="hero-animal"
+            >
+
+            <img
+                src="Bear.png"
+                alt="Медвежонок"
+                class="hero-animal center"
+            >
+
+            <img
+                src="Fox.png"
+                alt="Лисёнок"
+                class="hero-animal"
+            >
+
         </div>
 
-        <h1>Угадай пару</h1>
+
+        <h1>
+            Угадай пару
+        </h1>
+
 
         <p class="subtitle">
-            Весёлая и добрая игра на память
-            с милыми животными
+            Добрая игра на память с милыми животными.
+            Открывай карточки, запоминай их расположение
+            и находи одинаковые пары.
         </p>
 
-        <a href="#about" class="button">
+
+        <a
+            href="#about"
+            class="button"
+        >
             Узнать об игре
         </a>
 
     </div>
 
 </header>
+
 
 
 <main>
@@ -288,21 +505,72 @@
 
     <div class="container">
 
-        <h2>Найди все пары 🐾</h2>
+        <h2>
+            Найди все пары
+        </h2>
 
         <p>
-            «Угадай пару» — простая игра на память,
+            «Угадай пару» — простая и красочная игра,
             в которой нужно открывать карточки
-            и находить одинаковые изображения.
+            и искать одинаковых животных.
         </p>
 
         <p>
-            Запоминай, где спрятались животные,
-            собирай пары и проходи уровни.
+            Запоминай расположение картинок,
+            собирай все пары и проходи новые уровни.
         </p>
 
-        <div class="animals">
-            🐱 🐶 🐰 🐻 🦊 🐼
+
+        <div class="animal-gallery">
+
+            <div class="animal">
+                <img src="Cat.png" alt="Кот">
+            </div>
+
+            <div class="animal">
+                <img src="Puppy.png" alt="Щенок">
+            </div>
+
+            <div class="animal">
+                <img src="Bunny.png" alt="Зайчик">
+            </div>
+
+            <div class="animal">
+                <img src="Bear.png" alt="Медведь">
+            </div>
+
+            <div class="animal">
+                <img src="Fox.png" alt="Лиса">
+            </div>
+
+            <div class="animal">
+                <img src="Panda.png" alt="Панда">
+            </div>
+
+            <div class="animal">
+                <img src="Tiger.png" alt="Тигр">
+            </div>
+
+            <div class="animal">
+                <img src="Koala.png" alt="Коала">
+            </div>
+
+            <div class="animal">
+                <img src="Penguin.png" alt="Пингвин">
+            </div>
+
+            <div class="animal">
+                <img src="Owl.png" alt="Сова">
+            </div>
+
+            <div class="animal">
+                <img src="Frog.png" alt="Лягушка">
+            </div>
+
+            <div class="animal">
+                <img src="Pig.png" alt="Поросёнок">
+            </div>
+
         </div>
 
     </div>
@@ -315,64 +583,72 @@
 
     <div class="container">
 
-        <h2>Как играть?</h2>
+        <h2>
+            Как играть?
+        </h2>
+
 
         <div class="cards">
 
+
             <div class="card">
 
-                <div class="card-icon">
-                    🃏
-                </div>
+                <img
+                    src="Bunny.png"
+                    alt="Карточка с зайчиком"
+                >
 
                 <h3>
                     Открывай карточки
                 </h3>
 
                 <p>
-                    Нажми на карточку,
-                    чтобы увидеть спрятавшееся
-                    за ней животное.
+                    Нажимай на закрытые карточки,
+                    чтобы увидеть спрятавшихся животных.
                 </p>
 
             </div>
 
 
+
             <div class="card">
 
-                <div class="card-icon">
-                    🧠
-                </div>
+                <img
+                    src="Panda.png"
+                    alt="Карточка с пандой"
+                >
 
                 <h3>
                     Запоминай
                 </h3>
 
                 <p>
-                    Запоминай расположение
-                    животных и ищи
-                    одинаковые изображения.
+                    Запоминай, где находятся животные,
+                    чтобы быстрее найти одинаковые пары.
                 </p>
 
             </div>
 
 
+
             <div class="card">
 
-                <div class="card-icon">
-                    ⭐
-                </div>
+                <img
+                    src="Fox.png"
+                    alt="Карточка с лисёнком"
+                >
 
                 <h3>
                     Найди все пары
                 </h3>
 
                 <p>
-                    Открой все одинаковые
-                    карточки и пройди уровень.
+                    Собери все одинаковые карточки
+                    и заверши уровень.
                 </p>
 
             </div>
+
 
         </div>
 
@@ -390,10 +666,11 @@
             Почему играть интересно?
         </h2>
 
+
         <div class="features">
 
             <div class="feature">
-                🐻 Милые животные
+                🐾 Милые животные
             </div>
 
             <div class="feature">
@@ -401,7 +678,7 @@
             </div>
 
             <div class="feature">
-                🎨 Красочное оформление
+                🎨 Яркое оформление
             </div>
 
             <div class="feature">
@@ -433,10 +710,11 @@
         </h2>
 
         <p>
-            Если у вас возник вопрос,
+            Если у вас появился вопрос,
             предложение или проблема с игрой,
             напишите разработчику.
         </p>
+
 
         <a
             class="email"
@@ -461,9 +739,9 @@
 
         <p>
             Информация об использовании данных
-            доступна в политике конфиденциальности
-            игры.
+            доступна в политике конфиденциальности игры.
         </p>
+
 
         <a
             class="privacy"
@@ -495,4 +773,5 @@
 
 
 </body>
+
 </html>
