@@ -12,7 +12,19 @@
 
     <title>Угадай пару</title>
 
+    <!-- Иконка вкладки браузера -->
+    <link rel="icon"
+          type="image/png"
+          href="game-icon.png">
+
+    <link rel="apple-touch-icon"
+          href="game-icon.png">
+
     <style>
+
+        /* ========================================
+           ОСНОВНЫЕ НАСТРОЙКИ
+           ======================================== */
 
         * {
             box-sizing: border-box;
@@ -34,12 +46,13 @@
 
             background: #fffaf5;
             color: #4a3b34;
+
             line-height: 1.6;
         }
 
 
         /* ========================================
-           HERO
+           HERO / ВЕРХ САЙТА
            ======================================== */
 
         header {
@@ -63,35 +76,27 @@
 
         .hero {
             max-width: 850px;
+            width: 100%;
         }
 
-        .hero-animals {
-            display: flex;
-            justify-content: center;
-            align-items: end;
 
-            gap: 18px;
+        /* Иконка самой игры */
 
-            margin-bottom: 30px;
+        .game-icon {
+            width: 180px;
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 38px;
+
+            margin-bottom: 28px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(82, 55, 40, 0.18);
         }
 
-        .hero-animal {
-            width: 110px;
-            height: 110px;
-
-            object-fit: contain;
-
-            filter:
-                drop-shadow(
-                    0 8px 12px
-                    rgba(82, 55, 40, 0.14)
-                );
-        }
-
-        .hero-animal.center {
-            width: 145px;
-            height: 145px;
-        }
 
         h1 {
             font-size: 58px;
@@ -100,6 +105,7 @@
 
             margin-bottom: 15px;
         }
+
 
         .subtitle {
             max-width: 650px;
@@ -112,6 +118,7 @@
 
             color: #80665a;
         }
+
 
         .button {
             display: inline-block;
@@ -131,32 +138,41 @@
                 0 8px 18px
                 rgba(222, 127, 75, 0.22);
 
-            transition: 0.2s;
+            transition:
+                transform 0.2s,
+                background 0.2s;
         }
+
 
         .button:hover {
             transform: translateY(-3px);
+
             background: #e88c55;
         }
 
 
         /* ========================================
-           COMMON
+           ОБЩИЕ СЕКЦИИ
            ======================================== */
 
         section {
             padding: 85px 20px;
         }
 
+
         .light {
             background: #fff1e4;
         }
 
+
         .container {
             max-width: 1050px;
+
             margin: 0 auto;
+
             text-align: center;
         }
+
 
         h2 {
             font-size: 36px;
@@ -165,6 +181,7 @@
 
             margin-bottom: 25px;
         }
+
 
         .container > p {
             max-width: 760px;
@@ -178,7 +195,7 @@
 
 
         /* ========================================
-           ANIMAL GALLERY
+           ГАЛЕРЕЯ ЖИВОТНЫХ
            ======================================== */
 
         .animal-gallery {
@@ -192,6 +209,7 @@
             margin-top: 45px;
         }
 
+
         .animal {
             background: white;
 
@@ -203,12 +221,20 @@
                 0 7px 24px
                 rgba(80, 55, 40, 0.08);
 
-            transition: 0.2s;
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
         }
+
 
         .animal:hover {
             transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(80, 55, 40, 0.13);
         }
+
 
         .animal img {
             width: 100%;
@@ -219,7 +245,7 @@
 
 
         /* ========================================
-           HOW TO PLAY
+           КАК ИГРАТЬ
            ======================================== */
 
         .cards {
@@ -233,6 +259,7 @@
             margin-top: 45px;
         }
 
+
         .card {
             background: white;
 
@@ -243,7 +270,16 @@
             box-shadow:
                 0 8px 28px
                 rgba(80, 55, 40, 0.08);
+
+            transition:
+                transform 0.2s;
         }
+
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
 
         .card img {
             width: 100px;
@@ -254,6 +290,7 @@
             margin-bottom: 18px;
         }
 
+
         .card h3 {
             color: #6f4e3d;
 
@@ -262,13 +299,14 @@
             font-size: 22px;
         }
 
+
         .card p {
             color: #6b5a51;
         }
 
 
         /* ========================================
-           FEATURES
+           ОСОБЕННОСТИ
            ======================================== */
 
         .features {
@@ -281,6 +319,7 @@
 
             margin-top: 40px;
         }
+
 
         .feature {
             background: white;
@@ -298,7 +337,7 @@
 
 
         /* ========================================
-           SUPPORT
+           ПОДДЕРЖКА
            ======================================== */
 
         .email {
@@ -323,11 +362,19 @@
             box-shadow:
                 0 5px 18px
                 rgba(80, 55, 40, 0.08);
+
+            transition:
+                transform 0.2s;
+        }
+
+
+        .email:hover {
+            transform: translateY(-2px);
         }
 
 
         /* ========================================
-           PRIVACY
+           ПОЛИТИКА
            ======================================== */
 
         .privacy {
@@ -342,7 +389,7 @@
 
 
         /* ========================================
-           FOOTER
+           НИЗ САЙТА
            ======================================== */
 
         footer {
@@ -355,13 +402,14 @@
             color: #fff7f0;
         }
 
+
         footer p {
             margin: 4px;
         }
 
 
         /* ========================================
-           MOBILE
+           ПЛАНШЕТ
            ======================================== */
 
         @media (max-width: 800px) {
@@ -370,36 +418,40 @@
                 min-height: 600px;
             }
 
+
+            .game-icon {
+                width: 150px;
+                height: 150px;
+
+                border-radius: 32px;
+            }
+
+
             h1 {
                 font-size: 45px;
             }
+
 
             .subtitle {
                 font-size: 19px;
             }
 
+
             h2 {
                 font-size: 30px;
             }
 
-            .hero-animal {
-                width: 80px;
-                height: 80px;
-            }
-
-            .hero-animal.center {
-                width: 105px;
-                height: 105px;
-            }
 
             .animal-gallery {
                 grid-template-columns:
                     repeat(3, 1fr);
             }
 
+
             .cards {
                 grid-template-columns: 1fr;
             }
+
 
             .features {
                 grid-template-columns: 1fr;
@@ -408,33 +460,52 @@
         }
 
 
+        /* ========================================
+           МОБИЛЬНЫЙ
+           ======================================== */
+
         @media (max-width: 480px) {
 
-            .hero-animals {
-                gap: 8px;
+            header {
+                min-height: 560px;
+
+                padding:
+                    50px 18px;
             }
 
-            .hero-animal {
-                width: 65px;
-                height: 65px;
+
+            .game-icon {
+                width: 130px;
+                height: 130px;
+
+                border-radius: 28px;
             }
 
-            .hero-animal.center {
-                width: 85px;
-                height: 85px;
-            }
 
             h1 {
                 font-size: 39px;
             }
+
+
+            .subtitle {
+                font-size: 18px;
+            }
+
 
             .animal-gallery {
                 grid-template-columns:
                     repeat(2, 1fr);
             }
 
+
+            .animal img {
+                height: 95px;
+            }
+
+
             section {
-                padding: 65px 18px;
+                padding:
+                    65px 18px;
             }
 
         }
@@ -446,31 +517,20 @@
 <body>
 
 
+<!-- ========================================
+     ВЕРХНЯЯ ЧАСТЬ
+     ======================================== -->
+
 <header>
 
     <div class="hero">
 
-        <div class="hero-animals">
 
-            <img
-                src="Bunny.png"
-                alt="Зайчик"
-                class="hero-animal"
-            >
-
-            <img
-                src="Bear.png"
-                alt="Медвежонок"
-                class="hero-animal center"
-            >
-
-            <img
-                src="Fox.png"
-                alt="Лисёнок"
-                class="hero-animal"
-            >
-
-        </div>
+        <img
+            src="game-icon.png"
+            alt="Иконка игры Угадай пару"
+            class="game-icon"
+        >
 
 
         <h1>
@@ -501,6 +561,10 @@
 <main>
 
 
+<!-- ========================================
+     ОБ ИГРЕ
+     ======================================== -->
+
 <section id="about">
 
     <div class="container">
@@ -509,67 +573,122 @@
             Найди все пары
         </h2>
 
+
         <p>
             «Угадай пару» — простая и красочная игра,
             в которой нужно открывать карточки
             и искать одинаковых животных.
         </p>
 
+
         <p>
             Запоминай расположение картинок,
-            собирай все пары и проходи новые уровни.
+            собирай все пары
+            и проходи новые уровни.
         </p>
 
 
+
+        <!-- Галерея животных -->
+
         <div class="animal-gallery">
 
-            <div class="animal">
-                <img src="Cat.png" alt="Кот">
-            </div>
 
             <div class="animal">
-                <img src="Puppy.png" alt="Щенок">
+                <img
+                    src="Cat.png"
+                    alt="Кот"
+                >
             </div>
 
-            <div class="animal">
-                <img src="Bunny.png" alt="Зайчик">
-            </div>
 
             <div class="animal">
-                <img src="Bear.png" alt="Медведь">
+                <img
+                    src="Puppy.png"
+                    alt="Щенок"
+                >
             </div>
 
-            <div class="animal">
-                <img src="Fox.png" alt="Лиса">
-            </div>
 
             <div class="animal">
-                <img src="Panda.png" alt="Панда">
+                <img
+                    src="Bunny.png"
+                    alt="Зайчик"
+                >
             </div>
 
-            <div class="animal">
-                <img src="Tiger.png" alt="Тигр">
-            </div>
 
             <div class="animal">
-                <img src="Koala.png" alt="Коала">
+                <img
+                    src="Bear.png"
+                    alt="Медведь"
+                >
             </div>
 
-            <div class="animal">
-                <img src="Penguin.png" alt="Пингвин">
-            </div>
 
             <div class="animal">
-                <img src="Owl.png" alt="Сова">
+                <img
+                    src="Fox.png"
+                    alt="Лиса"
+                >
             </div>
 
-            <div class="animal">
-                <img src="Frog.png" alt="Лягушка">
-            </div>
 
             <div class="animal">
-                <img src="Pig.png" alt="Поросёнок">
+                <img
+                    src="Panda.png"
+                    alt="Панда"
+                >
             </div>
+
+
+            <div class="animal">
+                <img
+                    src="Tiger.png"
+                    alt="Тигр"
+                >
+            </div>
+
+
+            <div class="animal">
+                <img
+                    src="Koala.png"
+                    alt="Коала"
+                >
+            </div>
+
+
+            <div class="animal">
+                <img
+                    src="Penguin.png"
+                    alt="Пингвин"
+                >
+            </div>
+
+
+            <div class="animal">
+                <img
+                    src="Owl.png"
+                    alt="Сова"
+                >
+            </div>
+
+
+            <div class="animal">
+                <img
+                    src="Frog.png"
+                    alt="Лягушка"
+                >
+            </div>
+
+
+            <div class="animal">
+                <img
+                    src="Pig.png"
+                    alt="Поросёнок"
+                >
+            </div>
+
 
         </div>
 
@@ -578,6 +697,10 @@
 </section>
 
 
+
+<!-- ========================================
+     КАК ИГРАТЬ
+     ======================================== -->
 
 <section class="light">
 
@@ -658,6 +781,10 @@
 
 
 
+<!-- ========================================
+     ОСОБЕННОСТИ
+     ======================================== -->
+
 <section>
 
     <div class="container">
@@ -673,21 +800,26 @@
                 🐾 Милые животные
             </div>
 
+
             <div class="feature">
                 🧠 Тренировка памяти
             </div>
+
 
             <div class="feature">
                 🎨 Яркое оформление
             </div>
 
+
             <div class="feature">
                 ⭐ Разные уровни
             </div>
 
+
             <div class="feature">
                 👆 Простое управление
             </div>
+
 
             <div class="feature">
                 🌿 Спокойная атмосфера
@@ -701,6 +833,10 @@
 
 
 
+<!-- ========================================
+     ПОДДЕРЖКА
+     ======================================== -->
+
 <section class="light">
 
     <div class="container">
@@ -708,6 +844,7 @@
         <h2>
             Поддержка
         </h2>
+
 
         <p>
             Если у вас появился вопрос,
@@ -729,6 +866,10 @@
 
 
 
+<!-- ========================================
+     КОНФИДЕНЦИАЛЬНОСТЬ
+     ======================================== -->
+
 <section>
 
     <div class="container">
@@ -737,9 +878,11 @@
             Конфиденциальность
         </h2>
 
+
         <p>
             Информация об использовании данных
-            доступна в политике конфиденциальности игры.
+            доступна в политике
+            конфиденциальности игры.
         </p>
 
 
@@ -758,6 +901,10 @@
 </main>
 
 
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
 
 <footer>
 
